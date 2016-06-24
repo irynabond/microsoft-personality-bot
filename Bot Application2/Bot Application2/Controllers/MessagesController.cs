@@ -38,6 +38,9 @@ namespace Bot_Application2
             var messageStop = await argument;
             if (messageStop.Text == "no" || messageStop.Text == "No"||messageStop.Text == "stop")
             {
+                showDecks = false;
+                slideStarted = false;
+                index = 0;
                 await context.PostAsync("Ok! Thank you. See you next time.");
                 context.Wait(MessageReceivedAsync);
             }
@@ -48,7 +51,7 @@ namespace Bot_Application2
                     showDecks = true;
                     TestType names = new TestType();
                     var listOfDecks = string.Join(", ", names.GetNames().ToArray());
-                    await context.PostAsync("Please, choose the test: " + listOfDecks);
+                    await context.PostAsync("Hello and welcome to your upcoming adventure in personality exploring! Please, choose the test: " + listOfDecks);
                     context.Wait(MessageReceivedAsync);
 
                 }
@@ -61,7 +64,7 @@ namespace Bot_Application2
                         TestType slides = new TestType();
                         test_name = message.Text;
                         slideCollection = slides.GetSlides(test_name);
-                        await context.PostAsync("Your test is ready! For the following questions type 1 if your answer is yes, type 2 if your answer is no. In order to start type Ready or Start.");
+                        await context.PostAsync("Your test is ready! For the following questions type 1 if your answer is yes, type 2 if your answer is no. If you want to finish sesion type 'stop' any time. In order to start type Ready or Start.");
                         context.Wait(MessageReceivedAsync);
 
                     }
@@ -71,8 +74,8 @@ namespace Bot_Application2
                         {
                             string name = slideCollection[index].caption;
                             index++;
-                            await context.PostAsync(name);
-                            await context.PostAsync("![Show picture](" + slideCollection[index - 1].image_desktop + ")");
+                            await context.PostAsync(name);               
+                            await context.PostAsync("![Show picture](" + slideCollection[index - 1].image_desktop+  ")");
                             context.Wait(MessageReceivedAsync);
                         }
                         else
@@ -84,7 +87,7 @@ namespace Bot_Application2
                                 string name = slideCollection[index].caption;
                                 slideCollection[index - 1].response = response;
                                 index++;
-                                await context.PostAsync(name);     
+                                await context.PostAsync(name);
                                 await context.PostAsync("![Show picture](" + slideCollection[index - 1].image_desktop + ")");                        
                                 context.Wait(MessageReceivedAsync);
                             }
