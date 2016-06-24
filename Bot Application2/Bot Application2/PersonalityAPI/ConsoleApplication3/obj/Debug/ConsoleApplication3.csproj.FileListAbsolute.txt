@@ -1,0 +1,10 @@
+c:\users\iryna\documents\visual studio 2015\Projects\ConsoleApplication3\ConsoleApplication3\bin\Debug\ConsoleApplication3.exe.config
+c:\users\iryna\documents\visual studio 2015\Projects\ConsoleApplication3\ConsoleApplication3\bin\Debug\ConsoleApplication3.exe
+c:\users\iryna\documents\visual studio 2015\Projects\ConsoleApplication3\ConsoleApplication3\bin\Debug\ConsoleApplication3.pdb
+c:\users\iryna\documents\visual studio 2015\Projects\ConsoleApplication3\ConsoleApplication3\bin\Debug\com.traitify.net.TraitifyLibrary.dll
+c:\users\iryna\documents\visual studio 2015\Projects\ConsoleApplication3\ConsoleApplication3\bin\Debug\Newtonsoft.Json.dll
+c:\users\iryna\documents\visual studio 2015\Projects\ConsoleApplication3\ConsoleApplication3\bin\Debug\Newtonsoft.Json.xml
+c:\users\iryna\documents\visual studio 2015\Projects\ConsoleApplication3\ConsoleApplication3\obj\Debug\ConsoleApplication3.csprojResolveAssemblyReference.cache
+c:\users\iryna\documents\visual studio 2015\Projects\ConsoleApplication3\ConsoleApplication3\obj\Debug\ConsoleApplication3.exe
+c:\users\iryna\documents\visual studio 2015\Projects\ConsoleApplication3\ConsoleApplication3\obj\Debug\ConsoleApplication3.pdb
+c:\users\iryna\documents\visual studio 2015\Projects\ConsoleApplication3\ConsoleApplication3\bin\Debug\com.traitify.net.TraitifyLibrary.pdb

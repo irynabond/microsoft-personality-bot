@@ -1,0 +1,14 @@
+C:\Users\Iryna\Documents\Visual Studio 2015\Projects\ConsoleApplication3\ConsoleApplication3\TraitifyLibrary\obj\Debug\TraitifyLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Iryna\Documents\Visual Studio 2015\Projects\ConsoleApplication3\ConsoleApplication3\TraitifyLibrary\bin\Debug\com.traitify.net.TraitifyLibrary.dll
+C:\Users\Iryna\Documents\Visual Studio 2015\Projects\ConsoleApplication3\ConsoleApplication3\TraitifyLibrary\bin\Debug\com.traitify.net.TraitifyLibrary.pdb
+C:\Users\Iryna\Documents\Visual Studio 2015\Projects\ConsoleApplication3\ConsoleApplication3\TraitifyLibrary\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Iryna\Documents\Visual Studio 2015\Projects\ConsoleApplication3\ConsoleApplication3\TraitifyLibrary\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Iryna\Documents\Visual Studio 2015\Projects\ConsoleApplication3\ConsoleApplication3\TraitifyLibrary\obj\Debug\com.traitify.net.TraitifyLibrary.dll
+C:\Users\Iryna\Documents\Visual Studio 2015\Projects\ConsoleApplication3\ConsoleApplication3\TraitifyLibrary\obj\Debug\com.traitify.net.TraitifyLibrary.pdb
+C:\Users\irusi\Desktop\projects\Bot Application2\Bot Application2\PersonalityAPI\ConsoleApplication3\TraitifyLibrary\bin\Debug\com.traitify.net.TraitifyLibrary.dll
+C:\Users\irusi\Desktop\projects\Bot Application2\Bot Application2\PersonalityAPI\ConsoleApplication3\TraitifyLibrary\bin\Debug\com.traitify.net.TraitifyLibrary.pdb
+C:\Users\irusi\Desktop\projects\Bot Application2\Bot Application2\PersonalityAPI\ConsoleApplication3\TraitifyLibrary\bin\Debug\Newtonsoft.Json.dll
+C:\Users\irusi\Desktop\projects\Bot Application2\Bot Application2\PersonalityAPI\ConsoleApplication3\TraitifyLibrary\bin\Debug\Newtonsoft.Json.xml
+C:\Users\irusi\Desktop\projects\Bot Application2\Bot Application2\PersonalityAPI\ConsoleApplication3\TraitifyLibrary\obj\Debug\TraitifyLibrary.csprojResolveAssemblyReference.cache
+C:\Users\irusi\Desktop\projects\Bot Application2\Bot Application2\PersonalityAPI\ConsoleApplication3\TraitifyLibrary\obj\Debug\com.traitify.net.TraitifyLibrary.dll
+C:\Users\irusi\Desktop\projects\Bot Application2\Bot Application2\PersonalityAPI\ConsoleApplication3\TraitifyLibrary\obj\Debug\com.traitify.net.TraitifyLibrary.pdb
