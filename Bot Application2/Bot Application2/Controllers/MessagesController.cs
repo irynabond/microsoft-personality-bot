@@ -8,9 +8,9 @@ using System.Web.Http.Description;
 using Microsoft.Bot.Connector;
 
 using Newtonsoft.Json;
-using Microsoft.Bot.Builder.Dialogs;  
-using Microsoft.Bot.Builder.Luis;  
-using Microsoft.Bot.Builder.Luis.Models;  
+using Microsoft.Bot.Builder.Dialogs;
+using Microsoft.Bot.Builder.Luis;
+using Microsoft.Bot.Builder.Luis.Models;
 using System.Collections.Generic;
 using TraitifyAPI;
 using com.traitify.net.TraitifyLibrary;
@@ -26,7 +26,8 @@ namespace Bot_Application2
         bool response;
         int index = 0;
         string test_name;
-        List<Slide> slideCollection=null;
+        List<Slide> slideCollection = null;
+
 
         public async Task StartAsync(IDialogContext context)
         {
@@ -35,8 +36,9 @@ namespace Bot_Application2
 
         public virtual async Task MessageReceivedAsync(IDialogContext context, IAwaitable<Message> argument)
         {
-            var messageStop = await argument;
-            if (messageStop.Text == "no" || messageStop.Text == "No"||messageStop.Text == "stop")
+            var message = await argument;
+            TestType names = new TestType();
+            if (message.Text == "no" || message.Text == "No" || message.Text == "stop")
             {
                 showDecks = false;
                 slideStarted = false;
@@ -46,10 +48,10 @@ namespace Bot_Application2
             }
             else
             {
+
                 if (showDecks == false)
                 {
                     showDecks = true;
-                    TestType names = new TestType();
                     var listOfDecks = string.Join(", ", names.GetNames().ToArray());
                     await context.PostAsync("Hello and welcome to your upcoming adventure in personality exploring! Please, choose the test: " + listOfDecks);
                     context.Wait(MessageReceivedAsync);
@@ -60,10 +62,8 @@ namespace Bot_Application2
                     if (slideStarted == false)
                     {
                         slideStarted = true;
-                        var message = await argument;
-                        TestType slides = new TestType();
                         test_name = message.Text;
-                        slideCollection = slides.GetSlides(test_name);
+                        slideCollection = names.GetSlides(test_name);
                         await context.PostAsync("Your test is ready! For the following questions type 1 if your answer is yes, type 2 if your answer is no. If you want to finish sesion type 'stop' any time. In order to start type Ready or Start.");
                         context.Wait(MessageReceivedAsync);
 
@@ -74,30 +74,45 @@ namespace Bot_Application2
                         {
                             string name = slideCollection[index].caption;
                             index++;
-                            await context.PostAsync(name);               
-                            await context.PostAsync("![Show picture](" + slideCollection[index - 1].image_desktop+  ")");
+                            string url = slideCollection[index - 1].image_desktop;
+                            var reply = context.MakeMessage();
+                            reply.Attachments = new List<Attachment>();
+                            Attachment attachment = new Attachment()
+                            {
+                                ContentUrl = url,
+                                ContentType = "image"
+                            };
+                            reply.Attachments.Add(attachment);
+                            await context.PostAsync(name);
+                            await context.PostAsync(reply);
                             context.Wait(MessageReceivedAsync);
                         }
                         else
                         {
                             if (index < slideCollection.Count)
                             {
-                                var message = await argument;
                                 response = (message.Text == "1") ? true : false;
                                 string name = slideCollection[index].caption;
                                 slideCollection[index - 1].response = response;
                                 index++;
+                                string url = slideCollection[index - 1].image_desktop;
+                                var reply = context.MakeMessage();
+                                reply.Attachments = new List<Attachment>();
+                                Attachment attachment = new Attachment()
+                                {
+                                    ContentUrl = url,
+                                    ContentType = "image"
+                                };
+                                reply.Attachments.Add(attachment);
                                 await context.PostAsync(name);
-                                await context.PostAsync("![Show picture](" + slideCollection[index - 1].image_desktop + ")");                        
+                                await context.PostAsync(reply);
                                 context.Wait(MessageReceivedAsync);
                             }
                             else if (index == slideCollection.Count)
                             {
-                                var message = await argument;
                                 response = (message.Text == "2") ? false : true;
                                 slideCollection[index - 1].response = response;
-                                TestType result = new TestType();
-                                string personality_type = result.Result("test", slideCollection);
+                                string personality_type = names.Result("test", slideCollection);
                                 showDecks = false;
                                 slideStarted = false;
                                 index = 0;
@@ -118,7 +133,7 @@ namespace Bot_Application2
         public async Task<Message> Post([FromBody]Message message)
         {
             if (message.Type == "Message")
-            {               
+            {
                 return await Conversation.SendAsync(message, () => new PersonalityDialog());
             }
             else
@@ -145,5 +160,5 @@ namespace Bot_Application2
         }
     }
 }
-    
-    
+
+
