@@ -127,7 +127,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="PersonalityAPI\ConsoleApplication3\TraitifyLibrary\TraitifyLibrary.csproj">
+    <ProjectReference Include="PersonalityAPI\Traitify\TraitifyLibrary\TraitifyLibrary.csproj">
       <Project>{07177bf0-6217-4d4a-9dcd-faf62dea6679}</Project>
       <Name>TraitifyLibrary</Name>
     </ProjectReference>
