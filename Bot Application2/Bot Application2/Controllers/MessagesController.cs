@@ -40,7 +40,8 @@ namespace Bot_Application2
         {
             var message = await argument;
             TestType names = new TestType();
-            if (message.Text == "no" || message.Text == "No" || message.Text == "stop")
+            string messageText = message.Text.ToLower();
+            if (messageText == "no" || message.Text == "stop"||messageText=="nope"||messageText=="nop")
             {
                 showDecks = false;
                 slideStarted = false;
@@ -60,12 +61,12 @@ namespace Bot_Application2
                    
                     foreach (Deck deck in decks)
                     {                       
-                        reply = reply + "\n" + deckNum + ". " + deck.id + "\n";
+                        reply = reply + "\n" + deckNum + ". " + deck.id;
                         map.Add(deckNum.ToString(), deck.id);
                         deckNum++;
 
                     }
-                    await context.PostAsync("Welcome to your upcoming adventure in personality exploring! Please, choose the test:\n" + reply + System.Environment.NewLine + "Type the number of chosen test");
+                    await context.PostAsync("Welcome to your upcoming adventure in personality exploring! Please, choose the test:\n" + reply + System.Environment.NewLine + "Type the *number* of chosen test");
                     context.Wait(MessageReceivedAsync);
 
                 }
