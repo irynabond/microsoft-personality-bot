@@ -13,4 +13,4 @@ MIT LICENSE
 https://join.skype.com/bot/12211c88-81e2-4fe2-b046-475d97d30791 
 
 ###Try it in Facebook
-https://www.facebook.com/personalitybot
+https://www.facebook.com/traitifybot
