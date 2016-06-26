@@ -15,15 +15,16 @@ namespace TraitifyAPI
 
         static private string assessment_id;
 
-        public List<string> GetNames()
+        public List<Deck> GetNames()
         {
-            List<string> deckNames = new List<string>();
+           // List<string> deckNames = new List<string>();
             List<Deck> decks = traitify.GetDecks();
-            foreach (Deck deck in decks)
-            {
-                deckNames.Add(deck.id);
-            }
-            return deckNames;
+            //foreach (Deck deck in decks)
+            //{
+            //    deckNames.Add(deck.id);
+            //}
+            //return deckNames;
+            return decks;
         }
         public List<Slide> GetSlides(string deck)
         {
