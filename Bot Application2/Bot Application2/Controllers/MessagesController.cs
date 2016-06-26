@@ -41,6 +41,7 @@ namespace Bot_Application2
             var message = await argument;
             TestType names = new TestType();
             string messageText = message.Text.ToLower();
+            //finishing session
             if (messageText == "no" || message.Text == "stop"||messageText=="nope"||messageText=="nop")
             {
                 showDecks = false;
@@ -66,6 +67,7 @@ namespace Bot_Application2
                         deckNum++;
 
                     }
+                    //displaying existing decks
                     await context.PostAsync("Welcome to your upcoming adventure in personality exploring! Please, choose the test:\n" + reply + System.Environment.NewLine + "Type the *number* of chosen test");
                     context.Wait(MessageReceivedAsync);
 
@@ -74,7 +76,7 @@ namespace Bot_Application2
                 {
                     if (slideStarted == false)
                     {
-                       
+                       //receiving test slides
                         string deck_number = message.Text;
                         if (map.ContainsKey(deck_number))
                         {
@@ -85,6 +87,7 @@ namespace Bot_Application2
                             context.Wait(MessageReceivedAsync);
                         } else
                         {
+                            //reply if user's answer is incorrect
                             await context.PostAsync("Sorry, I can't understand " + "'" + deck_number + "'" +". Please use appropriate number of the test.");
                             context.Wait(MessageReceivedAsync);
                         }                      
@@ -93,6 +96,7 @@ namespace Bot_Application2
                     {
                         if (index == 0)
                         {
+                            //posting a slide + attaching a picture
                             string name = slideCollection[index].caption;
                             index++;
                             string url = slideCollection[index - 1].image_desktop;
@@ -132,6 +136,7 @@ namespace Bot_Application2
                                     context.Wait(MessageReceivedAsync);
                                 } else
                                 {
+                                    //reply if user's answer is incorrect
                                     await context.PostAsync("Sorry, I can't understand " + "'" + message.Text + "'" + ". Please use numbers 1 (agree)  or 2 (disagree) in your answer");
                                     context.Wait(MessageReceivedAsync);
                                 }
@@ -143,6 +148,7 @@ namespace Bot_Application2
                                 {
                                     response = (message.Text == "2") ? false : true;
                                     slideCollection[index - 1].response = response;
+                                    //updating user's answers + calling api for result
                                     string personality_type = names.Result("test", slideCollection);
                                     showDecks = false;
                                     slideStarted = false;
@@ -170,6 +176,7 @@ namespace Bot_Application2
         {
             if (message.Type == "Message")
             {
+                //calling the dialog
                 return await Conversation.SendAsync(message, () => new PersonalityDialog());
             }
             else
