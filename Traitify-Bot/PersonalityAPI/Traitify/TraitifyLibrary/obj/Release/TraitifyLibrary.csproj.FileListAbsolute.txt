@@ -5,3 +5,10 @@ C:\Users\irusi\Desktop\projects\Bot Application2\Bot Application2\PersonalityAPI
 C:\Users\irusi\Desktop\projects\Bot Application2\Bot Application2\PersonalityAPI\ConsoleApplication3\TraitifyLibrary\obj\Release\TraitifyLibrary.csprojResolveAssemblyReference.cache
 C:\Users\irusi\Desktop\projects\Bot Application2\Bot Application2\PersonalityAPI\ConsoleApplication3\TraitifyLibrary\obj\Release\com.traitify.net.TraitifyLibrary.dll
 C:\Users\irusi\Desktop\projects\Bot Application2\Bot Application2\PersonalityAPI\ConsoleApplication3\TraitifyLibrary\obj\Release\com.traitify.net.TraitifyLibrary.pdb
+C:\Users\Administrator\Source\Repos\microsoft-personality-bot\Traitify-Bot\PersonalityAPI\Traitify\TraitifyLibrary\bin\Release\com.traitify.net.TraitifyLibrary.dll
+C:\Users\Administrator\Source\Repos\microsoft-personality-bot\Traitify-Bot\PersonalityAPI\Traitify\TraitifyLibrary\bin\Release\com.traitify.net.TraitifyLibrary.pdb
+C:\Users\Administrator\Source\Repos\microsoft-personality-bot\Traitify-Bot\PersonalityAPI\Traitify\TraitifyLibrary\bin\Release\Newtonsoft.Json.dll
+C:\Users\Administrator\Source\Repos\microsoft-personality-bot\Traitify-Bot\PersonalityAPI\Traitify\TraitifyLibrary\bin\Release\Newtonsoft.Json.xml
+C:\Users\Administrator\Source\Repos\microsoft-personality-bot\Traitify-Bot\PersonalityAPI\Traitify\TraitifyLibrary\obj\Release\TraitifyLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Source\Repos\microsoft-personality-bot\Traitify-Bot\PersonalityAPI\Traitify\TraitifyLibrary\obj\Release\com.traitify.net.TraitifyLibrary.dll
+C:\Users\Administrator\Source\Repos\microsoft-personality-bot\Traitify-Bot\PersonalityAPI\Traitify\TraitifyLibrary\obj\Release\com.traitify.net.TraitifyLibrary.pdb

@@ -36,7 +36,7 @@ namespace Bot_Application2
             context.Wait(MessageReceivedAsync);
         }
 
-        public virtual async Task MessageReceivedAsync(IDialogContext context, IAwaitable<Message> argument)
+        public virtual async Task MessageReceivedAsync(IDialogContext context, IAwaitable<IMessageActivity> argument)
         {
             var message = await argument;
             TestType names = new TestType();
@@ -172,33 +172,30 @@ namespace Bot_Application2
     [BotAuthentication]
     public class MessagesController : ApiController
     {
-        public async Task<Message> Post([FromBody]Message message)
+
+        public async Task<HttpResponseMessage> Post([FromBody]Activity activity)
         {
-            if (message.Type == "Message")
+            if (activity.Type == ActivityTypes.Message)
             {
                 //calling the dialog
-                return await Conversation.SendAsync(message, () => new PersonalityDialog());
+                await Conversation.SendAsync(activity, () => new PersonalityDialog());
             }
             else
             {
-                return HandleSystemMessage(message);
+                HandleSystemMessage(activity);
             }
+            var response = Request.CreateResponse(HttpStatusCode.OK);
+            return response;
         }
 
-        private Message HandleSystemMessage(Message message)
+        private Activity HandleSystemMessage(Activity message)
         {
-            if (message.Type == "BotAddedToConversation")
+            if (message.Type == ActivityTypes.ConversationUpdate)
             {
-                Message reply = message.CreateReplyMessage("Hello and welcome to your upcoming adventure in personality exploring! Are you ready to start?");
+                Activity reply = message.CreateReply("Hello and welcome to your upcoming adventure in personality exploring! Are you ready to start?");
                 return reply;
 
-            }
-
-            if (message.Type == "BotRemovedFromConversation")
-            {
-                Message reply = message.CreateReplyMessage("Thank you! Hope to see you later.");
-                return reply;
-            }
+            }           
             return null;
         }
     }
